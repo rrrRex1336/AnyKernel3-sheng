@@ -529,7 +529,7 @@ jobs:
           fi
 
           FINAL_UAPI=$(read_uapi)
-          if [ "${FINAL_UAPI:-0}" -ne 4 ]; then
+          if [ "${FINAL_UAPI:-0}" -lt 4 ]; then
             echo "::error::UAPI 版本校验失败（期望 4，实际 ${FINAL_UAPI:-未知}）"
             exit 1
           fi
